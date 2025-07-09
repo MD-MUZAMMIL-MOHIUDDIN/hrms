@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   mariadb:
-    image: mariadb:10.8
+    image: mariadb:10.8   
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -23,14 +21,12 @@ services:
     command: bash /workspace/init.sh
     environment:
       - SHELL=/bin/bash
-      - NODE_VERSION_DEVELOP=20.19.2  # 👈 Ensure this is declared
     working_dir: /home/frappe
     volumes:
-      - .:/workspace                  # 👈 Mount local repo
-      - ./hrms:/workspace/hrms       # 👈 Explicitly mount your local HRMS app folder
+      - .:/workspace
     ports:
-      - 8000:8000                    # 👈 Frappe web port
-      - 9000:9000                    # 👈 SocketIO (can be changed if in use)
+      - 8000:8000
+      - 9000:9000
 
 volumes:
   mariadb-data:
