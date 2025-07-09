@@ -50,6 +50,7 @@
    "unique": 1
   },
   {
+   "description": "Maximum number of leaves an employee can take of this type per year.",
    "fieldname": "max_leaves_allowed",
    "fieldtype": "Float",
    "label": "Maximum Leave Allocation Allowed per Leave Period"
